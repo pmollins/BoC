@@ -42,7 +42,7 @@ public class ClimateDAO extends JdbcDaoSupport implements IClimateDAO {
 
     @Override
     public List<Climate> getAllClimates(){
-        String sql = "SELECT * FROM CLIMATE ORDER BY RDATE ASCF";
+        String sql = "SELECT * FROM CLIMATE ORDER BY RDATE ASC";
 
         return getJdbcTemplate().query(sql, new ClimateRowMapper());
     }
