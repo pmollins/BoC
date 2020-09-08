@@ -11,7 +11,7 @@ Upon filtering the front-end reloads the entire page, with more experience with 
 this would be presented with a series of templates.  I experimented and created a fragment
 for the table rendering.
 
-The front-end is functional, not pretty, nor is it foolproof as it is possible to specify a date range that is 
+The front-end is functional, but it is not foolproof as it is possible to specify a date range that is 
 invalid.
 
 The `error.html` page is *VERY BASIC*
