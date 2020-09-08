@@ -22,6 +22,7 @@ public class DateFilter {
 
     @Override
     public String toString() {
+
         return "DateFilter{" +
                 "earliestFormDate='" + earliestFormDate + '\'' +
                 ", latestFormDate='" + latestFormDate + '\'' +

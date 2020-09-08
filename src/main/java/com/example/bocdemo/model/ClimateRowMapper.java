@@ -1,5 +1,8 @@
 package com.example.bocdemo.model;
 
+import com.example.bocdemo.service.ClimateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -9,6 +12,10 @@ public class ClimateRowMapper implements RowMapper<Climate> {
     @Override
     public Climate mapRow(ResultSet rs, int rowNum) throws SQLException {
         Climate summary = new Climate();
+
+        //commented out because it's really noisy.
+        //Logger logger = LoggerFactory.getLogger(ClimateRowMapper.class);
+        //logger.info("ClimateRowMapper::mapRow - resultSet.stationName:" + rs.getString("STATION_NAME"));
 
         summary.setId(rs.getInt("ID"));
         summary.setStationName(rs.getString("STATION_NAME"));
