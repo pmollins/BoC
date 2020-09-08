@@ -13,3 +13,4 @@ for the table rendering.
 The front-end is functional, not pretty, nor is it foolproof as it is possible to specify a date range that is 
 invalid.
 
+The `error.html` page is *VERY BASIC*
