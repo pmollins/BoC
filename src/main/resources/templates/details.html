@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Station Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div th:switch="${climate}" class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 th:case="null">No climates available.</h2>
+            <div th:case="*">
+                <h2>Climates</h2>
+                <table class="table table-sm table-striped table-bordered table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th colspan="2">Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>Station Name</strong></td>
+                        <td th:text="${climate.stationName}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Province</strong></td>
+                        <td th:text="${climate.province}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Date</strong></td>
+                        <td th:text="${climate.date}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mean Temperature</strong></td>
+                        <td th:text="${climate.meanTemp}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lowest Min Temp</strong></td>
+                        <td th:text="${climate.lowestMonthlyMinTemp}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Highest Max Temp</strong></td>
+                        <td th:text="${climate.highestMonthlyMaxTemp}"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

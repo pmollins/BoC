@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Climates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div th:switch="${climates}" class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 th:case="null">No climates available.</h2>
+            <div th:case="*">
+                <h2>Climates</h2>
+                <span>
+                    <div>
+                        <form th:action="@{/}" th:object="${filterForm}" method="POST">
+                            <label for="start">Start Date:</label>
+                            <input type="date" id="start" th:field="*{earliestFormDate}">
+                            <label for="end">End Date:</label>
+                            <input type="date" id="end" th:field="*{latestFormDate}">
+                            <input type="submit" class="btn btn-primary">
+                        </form>
+                        <br />
+                    </div>
+                </span>
+                <div th:insert="tablefragment :: table"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

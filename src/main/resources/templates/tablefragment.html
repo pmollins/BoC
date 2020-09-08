@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <table class="table table-sm table-striped table-bordered table-hover" th:fragment="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Station Name</th>
+            <th>Date</th>
+            <th>Mean Temp</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="climate : ${climates}">
+            <td th:text="${climate.stationName}"></td>
+            <td th:text="${climate.date}"></td>
+            <td><a th:href="@{/climate/{id}(id=${climate.id})}" th:text="${climate.meanTemp}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
