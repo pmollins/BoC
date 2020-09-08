@@ -35,7 +35,7 @@ public class WebController {
     }
 
     @PostMapping("/")
-    public String testing(@ModelAttribute("filterForm") DateFilter filter, Model model) {
+    public String filter(@ModelAttribute("filterForm") DateFilter filter, Model model) {
         model.addAttribute("climates", climateService.findByDateRange(filter.getEarliestFormDate(), filter.getLatestFormDate()) );
         return "index";
     }

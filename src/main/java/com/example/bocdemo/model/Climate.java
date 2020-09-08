@@ -30,7 +30,7 @@ public class Climate {
     }
 
     public void setDate(String date) {
-        this.date = date;//LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        this.date = date;
     }
 
     public void setProvince(String province) {

@@ -25,12 +25,11 @@ public class CSVLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         File csvFile = new File("eng-climate-summary.csv");
         CsvMapper mapper = new CsvMapper();
-        CsvSchema schema = CsvSchema.emptySchema().withHeader(); // use first row as header; otherwise defaults are fine
+        CsvSchema schema = CsvSchema.emptySchema().withHeader(); //first row for header
         MappingIterator<Map<String,String>> it = mapper.readerFor(Map.class)
                 .with(schema)
                 .readValues(csvFile);
         climateDAO.insertClimates(it);
-
     }
 }
 
